@@ -1,0 +1,72 @@
+# Enable /tester commands? Includes a force op, you can view all commands with /tester
+Enable_Commands: true
+
+# Disable weather every 5 seconds?
+Disable_Weather: true
+
+# Disable mobs spawning naturally?
+Disable_Natural_Mobs: false
+
+# Prevent new slimes from spawning?
+Disable_Slimes: false
+
+# Remove all log files in /logs except the latest one? Also removes level.dat_old files from worlds
+Clear_Logs: true
+
+# What commands to run at startup? Such as /timings on or /spark profiler
+Startup_Commands: []
+
+# What commands to run later when playing? Such as /timings report and /timings off and /spark profiler --stop
+Threshold_Commands: []
+
+# Tester automatically moves folders from non-existing plugins to the Archive folder.
+# Select which folders in plugins/ folder to ignore. 
+Do_Not_Move_Plugins: 
+  - Archive of Tester
+  - bStats
+  - PluginMetrics
+  - Updater
+  - pStats
+  - .paper-remapped
+
+# Hide the following messages from your console if they contains strings below
+Hide_Log_Messages:
+  - "Loading LuckPerms"
+  - "Loading Tester"
+  - "Loading Vault"
+  - "Loading ProtocolLib"
+  - "Loading ChatControlRed"
+  - "Loading Winter"
+  - "Loading Boss"
+  - "Loading Confiscate"
+  - "Loading CoreArena"
+  - "libraries... please wait"
+  - "Loaded library"
+  - "Enabling LuckPerms"
+  - "        __    "
+  - "  |    |__)   LuckPerms"
+  - "  |___ |      Running on"
+  - "Loading configuration..."
+  - "Loading storage provider... [YAML_COMBINED]"
+  - "Loading internal permission managers..."
+  - "Performing initial data load..."
+  - "Successfully enabled."
+  - "Enabling Vault"
+  - "SuperPermissions loaded as backup permission system."
+  - "Enabled Version"
+  - "Registered Vault permission & chat hook."
+  - "Enabling ProtocolLib"
+  - "Started structure compiler thread."
+  - "has not yet been tested! Proceed with caution."
+  - "**** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!"
+  - "The server will make no attempt to authenticate usernames. Beware."
+  - "While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose."
+  - "To change this, set \"online-mode\" to \"true\" in the server.properties file."
+  - "**** Beginning UUID conversion, this may take A LONG time ****"
+  - "Preparing level \"world\""
+  - "Preparing start region for"
+  - "Time elapsed:"
+  - "Enabling Tester "
+  - "Server permissions file permissions.yml is empty, ignoring it"
+  - "Running delayed init tasks"
+  - "Timings Reset"

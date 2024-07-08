@@ -1,0 +1,30 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 127.0.0.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1720399368571
+  login: 1720398793919
+money: '0'
+last-account-name: manderijnn
+logoutlocation:
+  world: 96760231-d114-4265-8758-c6e518dc6c81
+  world-name: world
+  x: -54.638150815044256
+  y: 52.0
+  z: -1091.245345442371
+  yaw: 107.20121002197266
+  pitch: -90.0
