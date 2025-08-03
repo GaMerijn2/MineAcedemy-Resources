@@ -15,6 +15,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 import org.mineacademy.fo.plugin.SimplePlugin;
 
+import java.util.UUID;
+
 /**
  * PluginTemplate is a simple template you can use every time you make
  * a new plugin. This will save you time because you no longer have to
@@ -132,22 +134,24 @@ public final class Plugin1Plugin extends SimplePlugin {
 
 	ItemStack weapon;
 	Player player;
-	int maxAmmo;
-	int currentAmmo;
-	float shootCooldown;
-	float reloadTime;
+	int maxAmmo, currentAmmo;
+	float shootCooldown, reloadTime;
 	Projectile bullet;
+	boolean canShoot, isReloading;
 @EventHandler
 	public void OnLeftClick(final PlayerInteractEvent event)
 	{
 		player = event.getPlayer();
 		weapon = player.getInventory().getItemInMainHand();
 		Action action = event.getAction();
+		UUID playerId = player.getUniqueId();
+
 
 		if (weapon != null && weapon.getType() == Material.DIAMOND_HOE)
 		{
 			if (weapon.getItemMeta().getDisplayName().equals("Glock 19"))
 			{
+				long currentTime = System.currentTimeMillis();
 				if(action == Action.LEFT_CLICK_AIR || action == Action.LEFT_CLICK_BLOCK)
 				{
 					if (currentAmmo <= maxAmmo && currentAmmo > 0)
@@ -163,6 +167,23 @@ public final class Plugin1Plugin extends SimplePlugin {
 				{
 					Reload(player);
 				}
+
+				if (shootingCooldowns.containsKey(playerId))
+				{
+					long lastShootTime = shootingCooldowns.get(playerId);
+					if (currentTime - lastShootTime < SHOOTING_COOLDOWN)
+					{
+						player.sendMessage("You must wait before shooting again!");
+						return;
+					}
+				}
+
+				// Implement shooting logic here
+				player.sendMessage("Bang!");
+
+				// Set the new shooting cooldown
+				shootingCooldowns.put(playerId, currentTime);
+			}
 			}
 		}
 	}
